@@ -1,0 +1,12 @@
+services:
+  tracelens:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_PATH: /data/tracelens.sqlite3
+    volumes:
+      - tracelens-data:/data
+    restart: unless-stopped
+volumes:
+  tracelens-data:
